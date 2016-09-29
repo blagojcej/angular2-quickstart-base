@@ -16,7 +16,11 @@ export class HeroFormComponent {
   // TODO: Remove this when we're done
   get diagnostic() { return JSON.stringify(this.model); }
 
+  active = true;
+
   newHero() {
     this.model = new Hero(42, '', '');
+    this.active = false;
+    setTimeout(() => this.active = true, 0);
   }
 }
